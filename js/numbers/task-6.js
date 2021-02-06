@@ -2,10 +2,11 @@
 
 let a;
 let b;
+const result = a / b;
 const modulo = a % b;
 
 if(a % b === 0) {
-  console.log('Делится')
+  console.log(`Делится ${result}`)
 } else {
   console.log(`Делится с остатком  ${modulo}`)
 }
