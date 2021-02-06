@@ -9,8 +9,4 @@ for(i = 0; i < str.length; i++) {
   }
 }
 
-if(count >= 2) {
-  console.log(true);
-} else {
-  console.log(false);
-}
+console.log(count >= 2)
