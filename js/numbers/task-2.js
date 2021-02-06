@@ -2,7 +2,7 @@
 
 let a = 999;
 let b = Math.sqrt(a)
-console.log(b.toFixed(0));
-console.log(b.toFixed(1));
-console.log(b.toFixed(2));
+console.log(+b.toFixed(0));   // + потому что toFixed()  возвращает строку;
+console.log(+b.toFixed(1));
+console.log(+b.toFixed(2));
 
