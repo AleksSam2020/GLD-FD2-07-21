@@ -9,9 +9,9 @@ let str2 = 'Всем привет!'
 
 function str (a, maxlength) {
   if(a.length > maxlength){
-    console.log(a.substr(0, 17) + '...')
+    console.log(a.substr(0, maxlength - 3 ) + '...')
   } else {
-  console.log(a.padEnd(20, '.'));
+  console.log(a.padEnd(maxlength, '.'));
   }
 }
 
