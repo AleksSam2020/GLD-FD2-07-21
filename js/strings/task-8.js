@@ -3,9 +3,10 @@ const a = 10;
 const b = 2;
 Используйте шаблонные строки.*/
 
-const a = 10;
-const b = 2;
+let a = 10;
+let b = 2;
+const c = a * b;
 
-let str = `${a} times ${b} is 20`;
+let str = `${a} times ${b} is ${c}`;
 
 console.log(str);
