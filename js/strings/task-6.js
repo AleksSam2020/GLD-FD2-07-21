@@ -8,7 +8,7 @@ function searching(a, b) {
 
   while (index !== -1) {
     count++;
-    index = a.indexOf(b, index + 1);
+    index = a.indexOf(b, index + b.length);
   }
   console.log(count >= 2);
 }
