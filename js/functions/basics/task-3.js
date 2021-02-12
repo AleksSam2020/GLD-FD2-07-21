@@ -4,10 +4,10 @@
 a = '1', b = '1', result = '11' 
 a = 1, b = 1, result = '11'*/
 
-conc('1', '1');
-conc(1, 1);
+console.log(conc('1', '1'));
+console.log(conc(1, 1));
 
 function conc (a, b) {
-  console.log('' + a + b);
+  return '' + a + b;
 }
 

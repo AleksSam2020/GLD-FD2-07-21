@@ -9,8 +9,8 @@ a = 'abC', b = 'abc', result = -1*/
 
 let comp = function (a, b) {
   let result = a === b ? 1 : -1; 
-  console.log(result);
-}
+  return result;
+};
 
-comp('abc', 'abc');
-comp('abC', 'abc')
+console.log(comp('abc', 'abc'));
+console.log(comp('abC', 'abc'));

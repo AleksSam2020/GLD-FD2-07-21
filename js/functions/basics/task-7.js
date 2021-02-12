@@ -10,8 +10,7 @@ let func = (a, b) => {
     b.push(a[i] * a[i]);
     }
   }
-  console.log(b);
-}
+};
 
 (func(arr1, arr2))
 

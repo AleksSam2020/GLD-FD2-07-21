@@ -6,10 +6,10 @@ testString = 'abc', test = 'd', result = -1
 testString = 'abc', test='a', test2='b', result = 0*/
 
 const find = function(testString, test = testString) {
-  console.log(testString.indexOf(test));
+  return testString.indexOf(test);
 }
 
-find('abc', 'b');
-find('abc');
-find('abc', 'd');
-find('abc', 'a');
+console.log(find('abc', 'b'));
+console.log(find('abc'));
+console.log(find('abc', 'd'));
+console.log(find('abc', 'a'));

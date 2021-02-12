@@ -2,4 +2,4 @@
 
 let message = function () {
   console.log('message in console');
-}
+};

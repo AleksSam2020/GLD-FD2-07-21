@@ -30,9 +30,9 @@ function Calculator () {
 
   this.history = function history() {
     memoryHistory.push(this.history.name);
+    
     return memoryHistory;
   };
-
 }
 
 const calk = new Calculator();
