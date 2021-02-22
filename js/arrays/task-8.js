@@ -6,7 +6,9 @@
 
 const arr = [3, 0, -1, 12, -2, -4, 0, 7, 2];
 
-const arr2 = arr.filter(elem => elem < 0).concat(arr.filter(elem => elem === 0)).concat(arr.filter(elem => elem > 0));
+const arr2 = arr.filter(elem => elem < 0)
+                .concat(arr.filter(elem => elem === 0))
+                .concat(arr.filter(elem => elem > 0));
 
 console.log(arr2);
 
