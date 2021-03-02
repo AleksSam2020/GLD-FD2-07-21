@@ -27,7 +27,7 @@ str.isNonEmptyStr = function(a) {
     result = 'result = ' + false;
     }
   return result;
-}
+};
 
 console.log(str.isNonEmptyStr());
 console.log(str.isNonEmptyStr(''));
