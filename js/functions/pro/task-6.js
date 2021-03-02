@@ -7,6 +7,6 @@ const emploee = {
   work() {
     console.log(`I am ${this.name}. I am working...`);
   },
-}
+};
 
 emploee.work()
