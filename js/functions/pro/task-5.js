@@ -16,5 +16,5 @@ const parts = function( ...args) {
     arr.push(elem.slice((elem.indexOf(':') + 2), elem.lastIndexOf('.')));
   }
   return arr
-}
+};
 console.log(parts(param1, param2)); 
