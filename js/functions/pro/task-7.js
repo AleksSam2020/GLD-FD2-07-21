@@ -7,10 +7,10 @@ const emploee = {
   work() {
     console.log(`I am ${this.name}. I am working...`);
   },
-}
+};
 
 const person = {
   name: 'Aleksandra',
-}
+};
 
 emploee.work.bind(person)();
