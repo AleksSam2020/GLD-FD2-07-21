@@ -11,10 +11,6 @@ class VirtualFish {
     this.#food.push(value);
   }
 
-  get food() {
-    return this.food;
-  }
-
   reproduce() {
     let name = `Baby of ${this.name}`;
     let size = 'little';
