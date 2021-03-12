@@ -29,7 +29,7 @@ async function myThirdAsyncFunction() {
   }
 
   const copyUrls = urls.map(url => sendRequest(url))
-  await Promise.all(copyUrls).then(data => console.log(Object.assign(data[0], data[1])));
+  return await Promise.all(copyUrls).then(data => Object.assign(data[0], data[1]));
 }
 
-myThirdAsyncFunction();
+myThirdAsyncFunction().then(console.log);
