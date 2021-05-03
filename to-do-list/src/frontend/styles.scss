@@ -68,3 +68,20 @@ table > thead.hide {
     font-size: 0.7rem;
   }
 }
+
+@media screen and (max-width: 395px) {
+  td > .btn {
+    font-size: 0.45rem;
+  }
+}
+
+
+@media screen and (max-width: 350px) {
+  td > .btn {
+    font-size: 0.25rem;
+  }
+  tr th:nth-child(2),
+  tr td:nth-child(2) {
+    display: none;
+  }
+}
