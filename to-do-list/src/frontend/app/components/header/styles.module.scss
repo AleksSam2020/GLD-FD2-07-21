@@ -12,6 +12,10 @@
   @media screen and (max-width: 690px) {
     font-size: 2rem;
   }
+
+  @media screen and (max-width: 380px) {
+    font-size: 1.5rem;
+  }
 }
 
 .header > div {
@@ -20,4 +24,8 @@
 
 .header > div > i {
   margin-left: 20px;
+
+  @media screen and (max-width: 690px) {
+    margin-left: 0;
+  }
 }
