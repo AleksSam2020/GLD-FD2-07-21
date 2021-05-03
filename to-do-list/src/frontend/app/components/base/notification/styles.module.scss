@@ -1,0 +1,11 @@
+@import '../../../styles.scss/styles.scss';
+
+.toast {
+  opacity: 1!important;
+  position: absolute;
+  left: 72%;
+  top: 6%;
+  z-index: 1;
+  background-color: $color-for-both-theme;
+  color: white;
+}

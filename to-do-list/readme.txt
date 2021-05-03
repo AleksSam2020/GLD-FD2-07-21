@@ -1,0 +1,1 @@
+to run application use the command: npm run start:prod;
