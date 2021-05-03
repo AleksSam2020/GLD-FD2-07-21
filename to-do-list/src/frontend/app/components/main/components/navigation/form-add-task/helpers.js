@@ -47,7 +47,7 @@ export function AddTask(e) {
     document.querySelector('tBody').prepend(fr);
     ModalClose();
     removeDatepicker();
-    document.body.append(Toast('New task added!'));
+    document.querySelector('#root').append(Toast('New task added!'));
     removeToast();
   }) 
 }

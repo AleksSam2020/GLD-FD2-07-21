@@ -48,7 +48,7 @@ export function saveTask(e) {
       status.textContent = task['$set'].status;
       ModalClose();
       removeDatepicker();
-      document.body.append(Toast('Task changed'));
+      document.querySelector('#root')(Toast('Task changed'));
       removeToast();
     })
 }

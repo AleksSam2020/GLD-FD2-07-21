@@ -40,7 +40,7 @@ function deleteTask(e) {
             }).then(res => res.json())
             .then(task => {
               document.querySelector(`tr[data-id="${taskId}"]`)?.remove();
-              document.body.append(Toast('Deleted successfully')) ;
+              document.querySelector('#root').append(Toast('Deleted successfully')) ;
               removeToast();
             })
           }
