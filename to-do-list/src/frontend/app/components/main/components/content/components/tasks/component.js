@@ -103,7 +103,7 @@ export function Row({
   checkbox.classList.add(styles.checkbox);
   checkbox.addEventListener('change', crossOver);
 
-  if (isFinished) {
+  if (isFinished || status === 'done') {
     trBody.classList.add('is-finished');
     checkbox.setAttribute('checked', '');
   } else {

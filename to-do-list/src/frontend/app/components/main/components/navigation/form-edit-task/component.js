@@ -9,6 +9,7 @@ import datepickerFactory from 'jquery-datepicker';
 import datepickerJAFactory from 'jquery-datepicker/i18n/jquery.ui.datepicker-en-GB';
 
 import '../form-add-task/styles.scss';
+import { TaskServices } from "../../../../../services/task.service";
 
 export function FormEditTask() {
   const form = document.createElement('form');
@@ -63,7 +64,9 @@ export function EditTask(e) {
   e.preventDefault();
   const taskId = e.target.dataset.id;
 
-  fetchWithLoader(`http://localhost:3000/tasks/${taskId}`).then(res =>res.json())
+  const taskService = new TaskServices();
+
+  taskService.getTaskById(taskId)
     .then(task => {
       const form = FormEditTask();
       form.setAttribute('data-id', taskId);

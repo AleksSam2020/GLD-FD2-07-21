@@ -1,5 +1,5 @@
+import { TaskServices } from "../../../../../../services/task.service";
 import { Button } from "../../../../../base/buttons";
-import { fetchWithLoader } from "../../../../../base/helpers";
 import { removeToast, Toast } from "../../../../../base/notification/component";
 import { EditTask } from "../../../navigation/form-edit-task/component";
 
@@ -35,9 +35,9 @@ function deleteTask(e) {
       yes: {
           btnClass: 'btn-dark',
           action: function() {
-            fetchWithLoader(`http://localhost:3000/tasks/${taskId}`, {
-              method: 'DELETE',
-            }).then(res => res.json())
+            const taskService = new TaskServices()
+
+            taskService.deleteTask(taskId)
             .then(task => {
               document.querySelector(`tr[data-id="${taskId}"]`)?.remove();
               document.querySelector('#root').append(Toast('Deleted successfully')) ;
@@ -52,22 +52,12 @@ function deleteTask(e) {
 
 export function crossOver(e) {
   const id = e.target.dataset.id;
-  const checkedInput = document.querySelector(`input[type="checkbox"][data-id = "${id}"]`);
   const row = document.querySelector(`tr[data-id = "${id}"]`);
   const status = document.querySelector( `tr[data-id = "${id}"] td:nth-child(5)`);
   const valueStatusAtr = status.attributes.value.value;
-
+  const taskService = new TaskServices();
   if (this.checked) {
-    fetch(`http://localhost:3000/tasks/${id}`, {
-        method: 'PUT',
-        body: JSON.stringify({
-          status: 'done',
-          isFinished: true
-        }),
-        headers: {
-          'content-type': 'application/json'
-        }
-      }).then(res => res.json())
+    taskService.putTask(id, {status, isFinished: true})
       .then(task => {
           if (task['$set'].isFinished) {
             status.textContent = 'done';
@@ -79,16 +69,7 @@ export function crossOver(e) {
         }
       )
   } else {
-    fetch(`http://localhost:3000/tasks/${id}`, {
-        method: 'PUT',
-        body: JSON.stringify({
-          status: valueStatusAtr,
-          isFinished: false
-        }),
-        headers: {
-          'content-type': 'application/json'
-        }
-      }).then(res => res.json())
+    taskService.putTask(id, { status, isFinished: false})
       .then(task => {
           if (!task['$set'].isFinished) {
             status.textContent = valueStatusAtr;

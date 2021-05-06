@@ -1,4 +1,4 @@
-import { fetchWithLoader } from "../../../../base/helpers";
+import { TaskServices } from "../../../../../services/task.service";
 import { ModalClose } from "../../../../base/modal/helpers";
 import { removeToast, Toast } from "../../../../base/notification/component";
 import { removeDatepicker } from "../form-add-task/component";
@@ -24,18 +24,9 @@ export function saveTask(e) {
   const statusTd = document.querySelector( `tr td:nth-child(5)`);
   statusTd.setAttribute('value', status);
 
-  fetchWithLoader(`http://localhost:3000/tasks/${taskId}`, {
-      method: 'PUT',
-      body: JSON.stringify({
-        title: title,
-        description: description,
-        deadline: deadline,
-        status: status
-      }),
-      headers: {
-        'content-type': 'application/json'
-      }
-    }).then(res => res.json())
+  const taskService = new TaskServices();
+
+  taskService.putTask(taskId, {title, description, deadline, status})
     .then(task => {
       const title = document.querySelector( `tr[data-id = "${taskId}"] td:nth-child(2)`);
       const description = document.querySelector( `tr[data-id = "${taskId}"] td:nth-child(3)`);
@@ -48,7 +39,7 @@ export function saveTask(e) {
       status.textContent = task['$set'].status;
       ModalClose();
       removeDatepicker();
-      document.querySelector('#root')(Toast('Task changed'));
+      document.body.append(Toast('Task changed'));
       removeToast();
     })
 }

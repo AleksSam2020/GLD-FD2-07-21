@@ -1,12 +1,12 @@
 input.search-bar-input,
 select.select,
 input.search-bar-input:focus,
-select.select:focus {
+form select.select:focus {
   width: 40%;
   height: 80%;
   background-color: rgb(236, 196, 169);
   box-shadow: none;
-  font-family: "Cherry Cream Soda",cursive;
+  font-family: "Cherry Cream Soda", cursive;
 }
 
 .searching-panel {

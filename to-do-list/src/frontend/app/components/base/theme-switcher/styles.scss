@@ -27,10 +27,12 @@
 
 .fa-moon {
   color: $color-for-both-theme;
+  opacity: 0.3;
+  transform: scale(0.8);
 }
 
 .fa-sun {
-  color: white;
+  color: #ff0404;;
   transform: scale(1.5);
 }
 

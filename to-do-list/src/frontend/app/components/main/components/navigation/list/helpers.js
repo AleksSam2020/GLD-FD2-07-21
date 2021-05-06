@@ -55,6 +55,7 @@ export function FilterTasksByDate(e) {
 
     if(!tbody.childNodes.length) {
       thead.classList.add('hide');
+      
       if(e.target.outerText === 'Today') {
         div = `${div.textContent} ${e.target.outerText}`;
       } else {

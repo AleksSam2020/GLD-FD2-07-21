@@ -1,4 +1,4 @@
-import { fetchWithLoader } from "../../../../base/helpers";
+import { TaskServices } from "../../../../../services/task.service";
 import { ModalClose } from "../../../../base/modal/helpers";
 import { removeToast, Toast } from "../../../../base/notification/component";
 import { Row } from "../../content/components/tasks";
@@ -22,18 +22,9 @@ export function AddTask(e) {
 
   const fr = document.createDocumentFragment();
 
-  fetchWithLoader('http://localhost:3000/tasks', {
-    method: 'POST',
-    body: JSON.stringify({
-      title: title,
-      description: description,
-      deadline: deadline,
-      status: status
-    }) ,
-    headers: {
-      'content-type': 'application/json'
-    }
-  }).then(res =>res.json())
+  const taskService = new TaskServices();
+
+  taskService.postTask({title, description, deadline, status})
     .then(task => {
       fr.prepend(Row({
         id: task._id,

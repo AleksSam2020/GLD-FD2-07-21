@@ -3,7 +3,8 @@
 .modal{
   form input.form-control,
   form textarea.form-control,
-  form select.form-select {
+  form select.form-select,
+  form select.form-select:focus {
     font-family: "Cherry Cream Soda",cursive;
     background-color: rgb(236, 196, 169);
   }

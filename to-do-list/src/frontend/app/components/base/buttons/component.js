@@ -15,3 +15,4 @@ export function Button({ classList, content, clickHandler, type = 'button'}) {
 
   return btn;
 }
+

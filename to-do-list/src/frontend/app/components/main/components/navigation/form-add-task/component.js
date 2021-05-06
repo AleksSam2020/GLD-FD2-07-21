@@ -69,9 +69,15 @@ export function SelectForForm() {
       Option({
       value: 'secondary',
       content: 'Secondary'
-    }), Option({
+      }),
+      Option({
       value: 'important',
       content: 'Important'
-    }), );
+      }), 
+      Option({
+      value: 'done',
+      content: 'Done'
+      }),
+    );
   return select;
 }

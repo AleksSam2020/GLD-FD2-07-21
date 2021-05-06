@@ -21,24 +21,29 @@ export function Select() {
   select.setAttribute('aria-label', `.form-select-sm example`);
   select.addEventListener('change', ShowTaskStatus);
 
-  select.append(Option({
+  select.append(
+    Option({
     atr: 'selected',
     value: '',
     content: 'Status(all tasks)'
-  }), Option({
+    }), 
+    Option({
     value: 'secondary',
     content: 'Secondary'
-  }), Option({
+    }), 
+    Option({
     value: 'important',
     content: 'Important'
-  }), Option({
+    }), 
+    Option({
     value: 'done',
     content: 'Done'
-  }), )
+    }), 
+  );
   return select;
 }
 
-export function Option({atr = 'value', value, content }) {
+export function Option({atr = 'value', value, content}) {
   const option = document.createElement('option');
 
   option.setAttribute(atr, value);

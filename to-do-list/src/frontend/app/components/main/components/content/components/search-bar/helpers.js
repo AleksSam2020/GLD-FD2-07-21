@@ -1,4 +1,4 @@
-import { fetchWithLoader } from "../../../../../base/helpers";
+import { TaskServices } from "../../../../../../services/task.service";
 import { Row } from "../tasks/";
 
 import styles from './styles.module.scss';
@@ -46,10 +46,13 @@ function search(e) {
   const fr = document.createDocumentFragment();
   const tBody = document.querySelector('tbody');
   tBody.innerHTML = '';
-  fetchWithLoader(`http://localhost:3000/tasks?q=${q}`).then(res => res.json())
+
+  const taskService = new TaskServices();
+
+  taskService.getAllTasks(q)
   .then(tasks => {
     tasks.forEach(task=> {
-      fr.append(Row({
+      fr.prepend(Row({
         id: task._id,
         description: task.description,
         title: task.title,
@@ -57,7 +60,7 @@ function search(e) {
         status: task.status,
         isFinished: task.isFinished
       }))
-        tBody.append(fr);
+        tBody.prepend(fr);
     });
   })
 }  
